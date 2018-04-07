@@ -18,11 +18,10 @@ var commentRoutes    = require("./routes/comments"),
 
 
 const port = process.env.PORT || 3000;
-var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp"
 //mongoose.connect("mongodb://localhost/yelp_camp");
 //mongoose.connect("mongodb://gaurav:gauravj7@ds237409.mlab.com:37409/favourites");
 //mongodb://gaurav:gauravj7@ds237409.mlab.com:37409/favourites
-mongoose.connect(process.env.url);
+mongoose.connect(process.env.DATABASEURL);
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"))
